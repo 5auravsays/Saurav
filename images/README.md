@@ -1,0 +1,1 @@
+<img src="images/saurav.jpg" class="photo" alt="Saurav">
