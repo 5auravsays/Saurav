@@ -1,55 +1,100 @@
-// सौरव की कविता — interactions
+// =========================
+// सौरव की कविता
+// =========================
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Mobile nav toggle
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
+// Search Bar
+const searchBar = document.getElementById("searchBar");
+const cards = document.querySelectorAll(".card");
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+searchBar.addEventListener("keyup", function () {
 
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        navLinks.querySelectorAll("a").forEach((a) => a.classList.remove("active"));
-        link.classList.add("active");
-      });
-    });
-  }
+let value = searchBar.value.toLowerCase();
 
-  // Scroll reveal animation
-  const revealEls = document.querySelectorAll(".reveal");
+cards.forEach(card => {
 
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+let text = card.innerText.toLowerCase();
 
-    revealEls.forEach((el) => observer.observe(el));
-  } else {
-    revealEls.forEach((el) => el.classList.add("in-view"));
-  }
+if(text.includes(value)){
+card.style.display = "block";
+}else{
+card.style.display = "none";
+}
 
-  // Sticky nav shrink-on-scroll shadow
-  const nav = document.getElementById("site-nav");
-  if (nav) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 12) {
-        nav.style.boxShadow = "0 12px 30px -20px rgba(0,0,0,0.6)";
-      } else {
-        nav.style.boxShadow = "none";
-      }
-    });
-  }
 });
-        
+
+});
+
+// Card Animation
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+
+observer.observe(card);
+
+});
+
+// Welcome Message
+window.onload = ()=>{
+
+console.log("🌸 सौरव की कविता में आपका स्वागत है 🌸");
+
+};
+
+// Scroll Button
+const btn = document.createElement("button");
+
+btn.innerHTML="⬆";
+
+btn.id="topBtn";
+
+document.body.appendChild(btn);
+
+btn.style.position="fixed";
+btn.style.bottom="20px";
+btn.style.right="20px";
+btn.style.padding="12px";
+btn.style.border="none";
+btn.style.borderRadius="50%";
+btn.style.background="#ff4f87";
+btn.style.color="#fff";
+btn.style.fontSize="20px";
+btn.style.cursor="pointer";
+btn.style.display="none";
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>300){
+
+btn.style.display="block";
+
+}else{
+
+btn.style.display="none";
+
+}
+
+}
+
+btn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
