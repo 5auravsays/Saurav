@@ -15,39 +15,39 @@ header{
 background:#ff4d88;
 color:#fff;
 text-align:center;
-padding:25px;
+padding:20px;
 position:sticky;
 top:0;
 z-index:1000;
 box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-header h2{
+header h3{
 font-size:18px;
 margin-bottom:8px;
 }
 
 header h1{
-font-size:34px;
+font-size:30px;
 margin-bottom:15px;
 }
 
 #searchBar{
 width:90%;
-max-width:450px;
-padding:15px 20px;
+max-width:400px;
+padding:12px 18px;
 border:3px solid #ff69b4;
 border-radius:40px;
 outline:none;
-font-size:20px;
+font-size:18px;
 background:#fff0f6;
-box-shadow:0 0 20px rgba(255,105,180,.4);
+box-shadow:0 0 15px rgba(255,105,180,.4);
 transition:.3s;
 }
 
 #searchBar:focus{
 background:white;
-box-shadow:0 0 30px #ff69b4;
+box-shadow:0 0 25px #ff69b4;
 }
 
 .container{
@@ -55,9 +55,11 @@ display:flex;
 overflow-x:auto;
 scroll-snap-type:x mandatory;
 scroll-behavior:smooth;
-gap:20px;
-padding:20px;
-width:100%;
+gap:15px;
+padding:15px;
+width:95%;
+max-width:700px;
+margin:20px auto;
 }
 
 .container::-webkit-scrollbar{
@@ -66,15 +68,15 @@ display:none;
 
 .card{
 background:#fff;
-padding:20px;
+padding:18px;
 border-radius:20px;
 box-shadow:0 8px 20px rgba(0,0,0,.15);
-
 opacity:0;
 transform:translateY(60px);
 transition:.8s;
 
-min-width:100%;
+min-width:95%;
+max-width:650px;
 scroll-snap-align:start;
 flex-shrink:0;
 }
@@ -92,25 +94,25 @@ margin-bottom:15px;
 
 .card h2{
 text-align:center;
-font-size:34px;
+font-size:30px;
 color:#ff0066;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .card p{
-font-size:24px;
-line-height:1.9;
+font-size:21px;
+line-height:1.8;
 text-align:center;
 }
 
 .pink{
 color:#ff0066;
-font-size:28px;
+font-size:24px;
 }
 
 .purple{
 color:#7b1fa2;
-font-size:28px;
+font-size:24px;
 }
 
 video{
@@ -127,7 +129,7 @@ footer{
 background:#ff4d88;
 color:white;
 text-align:center;
-padding:20px;
+padding:18px;
 margin-top:20px;
 }
 
@@ -138,7 +140,7 @@ margin:30px 0;
 }
 
 .profile-photo{
-width:280px;
+width:220px;
 max-width:90%;
 border-radius:20px;
 border:5px solid #ff4f87;
@@ -152,7 +154,7 @@ justify-content:center;
 align-items:center;
 gap:10px;
 margin:20px;
-font-size:28px;
+font-size:24px;
 }
 
 @media(max-width:700px){
@@ -161,16 +163,20 @@ header h1{
 font-size:26px;
 }
 
+.card{
+min-width:100%;
+}
+
 .card h2{
-font-size:28px;
+font-size:26px;
 }
 
 .card p{
-font-size:20px;
+font-size:18px;
 }
 
 .pink,.purple{
-font-size:22px;
+font-size:20px;
 }
 
 }
