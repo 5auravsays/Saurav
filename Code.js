@@ -98,3 +98,23 @@ behavior:"smooth"
 });
 
 };
+
+
+const searchBar=document.getElementById("searchBar");
+const cards=document.querySelectorAll(".card");
+
+searchBar.addEventListener("keyup",()=>{
+
+let value=searchBar.value.toLowerCase();
+
+cards.forEach(card=>{
+
+if(card.innerText.toLowerCase().includes(value)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
+});
+
+});
