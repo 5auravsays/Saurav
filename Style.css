@@ -189,4 +189,17 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 }
+.container{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+gap:20px;
+padding:20px;
+}
 
+.card{
+min-width:100%;
+scroll-snap-align:start;
+flex-shrink:0;
+}
