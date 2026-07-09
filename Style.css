@@ -88,8 +88,12 @@ transform:translateY(0);
 
 .photo{
 width:100%;
+max-width:280px;
+height:220px;
+object-fit:cover;
 border-radius:15px;
-margin-bottom:15px;
+margin:0 auto 15px;
+display:block;
 }
 
 .card h2{
@@ -177,6 +181,11 @@ font-size:18px;
 
 .pink,.purple{
 font-size:20px;
+}
+
+.photo{
+max-width:200px;
+height:180px;
 }
 
 }
